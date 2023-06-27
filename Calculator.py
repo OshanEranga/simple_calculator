@@ -64,11 +64,13 @@ def cal_print(operator: str) -> None | bool:
         elif secound_number.endswith("#"):
             return False
 
-        if not (first_number.replace('.', '', 1).isdigit() and secound_number.replace('.', '', 1).isdigit()):
-            print("Not a valid number,please enter again.")
+        try:
+            num1 = float(first_number)
+            num2 = float(secound_number)
+        except ValueError:
+            print("Not a number.Please try again.")
             continue
-        num1 = float(first_number)
-        num2 = float(secound_number)
+
         if operator == "+":
             answer = addition(num1, num2)
         elif operator == "-":
