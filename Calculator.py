@@ -1,7 +1,7 @@
 previous_calculations = []
 # Display the menu
 def display_menu():
-    print("Select operation.")
+    print("\nSelect operation.\n")
     print("1.Add      : +")
     print("2.Subtract : -")
     print("3.Multiply : *")
@@ -85,15 +85,16 @@ def cal_print(operator: str) -> None | bool:
             answer = exponentiation(num1, num2)
         else:
             print("Something Went Wrong")
-        print(f"{num1} {operator} {num2} = {answer}")
+        print(f"\n{num1} {operator} {num2} = {answer}")
         previous_calculations.append(f"{num1} {operator} {num2} = {answer}")
         break
 
 # show history
 def history(histoty_list : list) ->None:
     if histoty_list == []:
-        print("No past calculations to show")
+        print("\nNo past calculations to show")
     else:
+        print()
         for cal in histoty_list:
             print(cal)
 
@@ -107,15 +108,15 @@ while True:
         if check == True:
             continue
         elif check == False:
-            print("Done. Terminating")
+            print("\nDone. Terminating")
             break
     elif user_choice == "#":
-        print("Done. Terminating")
+        print("\nDone. Terminating")
         break
     elif user_choice == "?":
         history(previous_calculations)
     else:
-        print("Unrecognized operation.")
+        print("\nUnrecognized operation.")
 
 
 
